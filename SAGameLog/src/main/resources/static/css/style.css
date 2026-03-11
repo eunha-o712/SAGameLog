@@ -1,0 +1,152 @@
+body{
+    font-family: "Malgun Gothic", sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 60px 20px;
+    color: #1f2d3d;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1{
+    margin: 0 0 14px;
+    font-size: 42px;
+    font-weight: 800;
+    color: #23384d;
+    letter-spacing: -1px;
+}
+
+.sub-text{
+    margin-bottom: 28px;
+    color: #5b6b7b;
+    font-size: 16px;
+}
+
+.nav{
+    margin-bottom: 28px;
+}
+
+.nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: #23384d;
+    font-weight: 700;
+    background: white;
+    padding: 10px 16px;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: 0.2s;
+}
+
+.nav a:hover{
+    background: #23384d;
+    color: white;
+}
+
+.menu{
+    margin-top: 34px;
+}
+
+.btn{
+    display: inline-block;
+    padding: 14px 22px;
+    background: #23384d;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    margin: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+    box-shadow: 0 6px 14px rgba(35,56,77,0.18);
+}
+
+.btn:hover{
+    background: #162534;
+    transform: translateY(-1px);
+}
+
+.search-box{
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input{
+    padding: 14px 16px;
+    font-size: 15px;
+    width: 260px;
+    border-radius: 12px;
+    border: 1px solid #d4dbe3;
+    background: white;
+    box-sizing: border-box;
+}
+
+input:focus{
+    outline: none;
+    border-color: #23384d;
+}
+
+button{
+    padding: 14px 20px;
+    border: none;
+    background: #23384d;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+button:hover{
+    background: #162534;
+}
+
+.card{
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px auto 0;
+    text-align: left;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    max-width: 900px;
+}
+
+.card h2{
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: 24px;
+    color: #111;
+    border-bottom: 2px solid #eef2f7;
+    padding-bottom: 14px;
+}
+
+.row{
+    margin: 14px 0;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.row b{
+    display: inline-block;
+    min-width: 110px;
+    color: #23384d;
+}
+
+.loading{
+    display: none;
+    color: #2b6cb0;
+    font-weight: 700;
+    margin-top: 18px;
+}
+
+.error{
+    color: #d93025;
+    font-weight: 700;
+    margin-top: 18px;
+}

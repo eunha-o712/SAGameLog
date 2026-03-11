@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="UTF-8">
+<title>프로필 검색</title>
+
+<p class="sub-text">닉네임으로 서든어택 유저 정보를 조회합니다.</p>
+
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>프로필 검색</h1>
+
+<div class="nav">
+
+<a href="/">홈</a>
+
+</div>
+
+<div class="search-box">
+
+<input type="text" id="nicknameInput" placeholder="닉네임 입력">
+
+<button onclick="searchProfile()">검색</button>
+
+</div>
+
+<div id="loadingMsg" class="loading">불러오는 중...</div>
+
+<div id="errorMsg" class="error"></div>
+
+<div id="profileCard" class="card" style="display:none;">
+
+<div id="profileContent"></div>
+
+</div>
+
+</div>
+
+<script src="/js/profile.js"></script>
+
+</body>
+</html>
