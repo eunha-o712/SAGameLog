@@ -9,19 +9,39 @@
 
 <div class="container">
     <h1>전적 검색</h1>
-    <p class="sub-text">선택한 유저의 최근 전적을 조회합니다.</p>
+    <p class="sub-text">게임 모드와 매치 유형으로 최근 전적을 조회합니다.</p>
 
     <div class="nav">
         <a href="/">홈</a>
-        <a href="/page/profile.html">프로필 검색</a>
     </div>
 
-    <div class="card">
-        <div class="row"><b>OUID</b> : <span id="ouidText">불러오는 중...</span></div>
+	<div class="card">
+	    <div class="row"><b>플레이어</b> : <span id="playerName">불러오는 중...</span></div>
+	</div>
+	
+    <div class="card" style="margin-top:20px;">
+        <div class="row">
+            <b>게임 모드</b>
+            <select id="matchModeSelect">
+                <option value="개인전">개인전</option>
+                <option value="데스매치">데스매치</option>
+                <option value="폭파미션" selected>폭파미션</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <b>매치 유형</b>
+            <select id="matchTypeSelect"></select>
+        </div>
+
+        <div class="row" style="margin-top:20px;">
+            <button id="searchBtn">검색</button>
+            <button id="resetBtn" type="button">초기화</button>
+        </div>
     </div>
 
     <div id="matchArea" class="card" style="margin-top:20px;">
-        <p>여기에 전적 리스트가 나올 예정</p>
+        <p>전적 불러오는 중...</p>
     </div>
 </div>
 

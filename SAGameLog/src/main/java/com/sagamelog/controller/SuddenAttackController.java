@@ -3,57 +3,49 @@ package com.sagamelog.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sagamelog.service.SaMatchService;
 import com.sagamelog.service.SaUserService;
 
 @RestController
 @RequestMapping("/api/sa")
 public class SuddenAttackController {
 
-    private final SaUserService saUserService;
+    private final SaUserService userService;
+    private final SaMatchService matchService;
 
-    public SuddenAttackController(SaUserService saUserService) {
-        this.saUserService = saUserService;
-    }
-
-    @GetMapping("/ouid")
-    public ResponseEntity<Map<String, Object>> getOuid(@RequestParam String nickname) {
-        Map<String, Object> result = new HashMap<>();
-
-        try {
-            String ouid = saUserService.getOuid(nickname);
-            result.put("nickname", nickname);
-            result.put("ouid", ouid);
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            result.put("error", "OUID 조회 실패");
-            result.put("message", e.getMessage());
-            return ResponseEntity.badRequest().body(result);
-        }
+    public SuddenAttackController(SaUserService userService, SaMatchService matchService) {
+        this.userService = userService;
+        this.matchService = matchService;
     }
 
     @GetMapping("/profile")
-    public ResponseEntity<Map<String, Object>> getProfile(@RequestParam String nickname) {
+    public Map<String, Object> getProfile(@RequestParam String nickname) throws Exception {
+        String ouid = userService.getOuid(nickname);
+
         Map<String, Object> result = new HashMap<>();
+        result.put("ouid", ouid);
+        result.put("basicInfo", userService.getBasicInfo(ouid));
+        result.put("recentTrend", userService.getRecentTrend(ouid));
 
-        try {
-            String ouid = saUserService.getOuid(nickname);
+        return result;
+    }
 
-            result.put("nickname", nickname);
-            result.put("ouid", ouid);
-            result.put("basicInfo", saUserService.getBasicInfo(ouid));
-            result.put("recentTrend", saUserService.getRecentTrend(ouid));
+    @GetMapping("/matches")
+    public Map<String, Object> getMatches(
+            @RequestParam String ouid,
+            @RequestParam(name = "match_mode") String matchMode,
+            @RequestParam(name = "match_type", required = false) String matchType) {
 
-            return ResponseEntity.ok(result);
-        } catch (Exception e) {
-            result.put("error", "프로필 조회 실패");
-            result.put("message", e.getMessage());
-            return ResponseEntity.badRequest().body(result);
-        }
+        return matchService.getMatches(ouid, matchMode, matchType);
+    }
+
+    @GetMapping("/match-detail")
+    public Map<String, Object> getMatchDetail(@RequestParam(name = "match_id") String matchId) {
+        return matchService.getMatchDetail(matchId);
     }
 }
