@@ -44,6 +44,11 @@ public class SuddenAttackController {
         return matchService.getMatches(ouid, matchMode, matchType);
     }
 
+    @GetMapping("/recent-matches")
+    public Map<String, Object> getRecentMatches(@RequestParam String ouid) {
+        return matchService.getRecentMatches(ouid);
+    }
+
     @GetMapping("/match-detail")
     public Map<String, Object> getMatchDetail(@RequestParam(name = "match_id") String matchId) {
         return matchService.getMatchDetail(matchId);

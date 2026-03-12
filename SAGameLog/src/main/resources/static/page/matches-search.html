@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>전적 검색</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>전적 검색</h1>
+    <p class="sub-text">닉네임으로 전적 검색 페이지를 시작합니다.</p>
+
+    <div class="nav">
+        <a href="/">홈</a>
+    </div>
+
+    <div class="card">
+        <div class="row">
+            <b>닉네임</b>
+            <input type="text" id="nicknameInput" placeholder="닉네임 입력" style="margin-left:12px; width:260px;">
+            <button id="searchBtn" type="button">검색</button>
+        </div>
+    </div>
+
+    <div id="loadingMsg" class="loading">불러오는 중...</div>
+    <div id="errorMsg" class="error"></div>
+
+    <div id="searchResultArea" class="card" style="margin-top:20px; display:none;">
+        <div class="row"><b>플레이어</b> : <span id="playerName">-</span></div>
+        <div class="row"><b>상태</b> : 전적 검색 준비 완료</div>
+    </div>
+
+    <div id="filterArea" class="card" style="margin-top:20px; display:none;">
+        <div class="row">
+            <b>게임 모드</b>
+            <select id="modeFilter">
+                <option value="폭파미션" selected>폭파미션</option>
+                <option value="개인전">개인전</option>
+                <option value="데스매치">데스매치</option>
+                <option value="진짜를 모아라">진짜를 모아라</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <b>매치 유형</b>
+            <select id="typeFilter"></select>
+        </div>
+
+        <div class="row" style="margin-top:20px;">
+            <button id="matchSearchBtn" type="button">검색</button>
+            <button id="resetBtn" type="button">초기화</button>
+        </div>
+    </div>
+
+    <div id="matchListArea" class="card" style="margin-top:20px; display:none;"></div>
+
+    <div id="paginationArea" style="text-align:center; margin-top:20px;"></div>
+</div>
+
+<script src="/js/matches-search.js"></script>
+</body>
+</html>

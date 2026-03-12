@@ -142,7 +142,6 @@ async function loadMatches() {
 }
 
 function goToMatchDetail(matchId) {
-    sessionStorage.setItem("currentMatchId", matchId);
     location.href = `/page/match-detail.html?match_id=${encodeURIComponent(matchId)}`;
 }
 

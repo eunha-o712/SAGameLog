@@ -20,6 +20,10 @@ h1{
     letter-spacing: -1px;
 }
 
+h2{
+    color: #111;
+}
+
 .sub-text{
     margin-bottom: 28px;
     color: #5b6b7b;
@@ -57,11 +61,13 @@ h1{
     background: #23384d;
     color: white;
     text-decoration: none;
+    border: none;
     border-radius: 12px;
     margin: 10px;
     font-weight: 700;
     transition: 0.2s;
     box-shadow: 0 6px 14px rgba(35,56,77,0.18);
+    cursor: pointer;
 }
 
 .btn:hover{
@@ -107,6 +113,14 @@ button:hover{
     background: #162534;
 }
 
+select{
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #cfd8e3;
+    background: white;
+}
+
 .card{
     background: white;
     padding: 30px;
@@ -149,4 +163,8 @@ button:hover{
     color: #d93025;
     font-weight: 700;
     margin-top: 18px;
+}
+
+.match-item{
+    transition: 0.15s;
 }
